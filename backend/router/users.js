@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/user');
+const checkAuth = require('../middleware/auth');
+router.post('/signup', userController.createUser);
+router.post('/login', userController.userLogin);
+router.post('/favourites/:eventId', checkAuth, userController.addFavourite);
+router.get('/favourites/:userId', checkAuth, userController.getFavourites);
+router.delete('/favourites/:eventId', checkAuth, userController.removeFavourite);
+module.exports = router;
