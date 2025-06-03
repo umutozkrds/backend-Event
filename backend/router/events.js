@@ -14,4 +14,5 @@ router.get('/:id', eventController.getEvent);
 router.put('/:id', checkAuth, upload.single('image'), eventController.updateEvent);
 router.delete('/:id', checkAuth, eventController.deleteEvent);
 
+
 module.exports = router; 

@@ -37,4 +37,26 @@ exports.getCategories = async (req, res) => {
     }
 };
 
+exports.getEventsByCategory = (req, res, next) => {
+    Event.find({ category: req.params.category })
+        .then(events => {
+            if (events) {
+                res.status(200).json({
+                    message: "Events by categories fetching is success",
+                    events: events
+                });
+            } else {
+                res.status(404).json({ message: 'No events found for this user!' });
+            }
+            
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: "Fetching events failed!"
+            });
+        });
+    
+
+}
+
 

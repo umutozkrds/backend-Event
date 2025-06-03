@@ -152,3 +152,5 @@ exports.deleteEvent = (req, res, next) => {
             });
         });
 }
+
+
