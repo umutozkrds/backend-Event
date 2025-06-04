@@ -138,7 +138,7 @@ exports.updateEvent = (req, res, next) => {
 }
 
 exports.deleteEvent = (req, res, next) => {
-    Event.deleteOne({ _id: req.params.id, creator: req.userData.userId })
+    Event.deleteOne({ _id: req.params.id })
         .then(result => {
             if (result.n > 0) {
                 res.status(200).json({ message: "Deletion successful!" });

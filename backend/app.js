@@ -50,4 +50,5 @@ app.use('/api/categories', categoryRoutes);
 
 module.exports = app;
 
-//9fqassqBgqD55Kt0
+//9fqassqBgqD55Kt0  
+//mongosh "mongodb+srv://cluster0.adncq66.mongodb.net/" --apiVersion 1 --username umutozkardes0
